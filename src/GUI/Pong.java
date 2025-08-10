@@ -55,6 +55,7 @@ public class Pong extends JFrame {
 //		    	int alturaBarrita2 = barrita1.getHeight();
 		    	
 		    	int alturaPanel = contentPane.getHeight();
+		    	int anchuraPanel = contentPane.getWidth();
 		    	System.out.println(alturaPanel);
 
 		    	if(e.getKeyCode() == KeyEvent.VK_W) {
