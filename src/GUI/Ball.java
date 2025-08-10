@@ -48,17 +48,18 @@ public class Ball extends JPanel {
 																	// se hace la resta ya que la posicion de "y" se toma desde arriba a la izquierda del objeto "pelota"
 			dy = -dy;  												// se invierte el movimiento de la pelota una vez rebota 	
 		}
-		if (posX <= player1.getX() + player1.getWidth() &&
-			posX + getWidth() >= player1.getX() && 
-			posY <= player1.getY() + player1.getHeight() &&
-			posY + getHeight() >= player1.getY()) {
-			dx = -dx;
+		if (posX <= player1.getX() + player1.getWidth() &&			// se compara la posición X de la pelota con la posición X del jugador 1 mas el ancho que tiene la paleta
+			posX + getWidth() >= player1.getX() && 					// se compara la posición X de la pelota, mas su ancho, con la posición X de la paleta 1
+			posY <= player1.getY() + player1.getHeight() &&			// se compara la posición Y de la pelota con la posición Y del jugador 1 mas la altura que tiene la paleta
+			posY + getHeight() >= player1.getY()) {					// se compara la posición Y de la pelota, mas su altura, con la posición Y de la paleta 1 
+			dx = -dx;					//se invierte la dirección de la pelota
 		}
-		if (posX <= player2.getX() + player2.getWidth() &&
-			posX + getWidth() >= player2.getX() && 
-			posY <= player2.getY() + player2.getHeight() &&
-			posY + getHeight() >= player2.getY()) {
-				dx = -dx;
+		
+		if (posX <= player2.getX() + player2.getWidth() &&			// se compara la posición X de la pelota con la posición X del jugador 2 mas el ancho que tiene la paleta
+			posX + getWidth() >= player2.getX() && 					// se compara la posición X de la pelota, mas su ancho, con la posición X de la paleta 2
+			posY <= player2.getY() + player2.getHeight() &&			// se compara la posición Y de la pelota con la posición Y del jugador 2 mas la altura que tiene la paleta
+			posY + getHeight() >= player2.getY()) {					// se compara la posición Y de la pelota, mas su altura, con la posición Y de la paleta 2
+				dx = -dx;				//se invierte la dirección de la pelota
 			}
 		
 		posX += dx;
