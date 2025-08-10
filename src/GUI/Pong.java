@@ -3,6 +3,9 @@ package GUI;
 import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import javax.swing.Timer;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -80,8 +83,19 @@ public class Pong extends JFrame {
 		    }
 		});		
 		
-
-
+		Ball pelota = new Ball(300, 150, 20, 20);
+		pelota.setBackground(Color.RED);
+		contentPane.add(pelota);
+		Timer timer = new Timer(10, new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				int cont_dx = 2;
+				int cont_dy = 2;
+				pelota.mover(cont_dx, cont_dy); //el valor inicial de la velocidad de la pelota es el valor dentro de "mover()" osea es 2 pixeles en "x" y 2 pixeles en "y".
+				pelota.rebotar();
+//				pelota.repaint();
+			}
+		});
+	timer.start();
 	}
 
 }
