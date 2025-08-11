@@ -9,7 +9,6 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.LineBorder;
 
 public class Pong extends JFrame {
 
@@ -34,44 +33,20 @@ public class Pong extends JFrame {
 		player2.setBackground(Color.BLACK);
 		
 		contentPane.add(player1);
-		contentPane.add(player2);
-		
-//		JPanel barrita1 = new JPanel();
-//		barrita1.setBackground(Color.BLACK);
-//		barrita1.setBounds(30, 97, 10, 66);
-//		contentPane.add(barrita1);
-		
-//		JPanel barrita2 = new JPanel();
-//		barrita2.setBackground(Color.BLACK);
-//		barrita2.setBounds(386, 73, 10, 66);
-//		contentPane.add(barrita2);			
+		contentPane.add(player2);		
 		
 		
 		addKeyListener(new KeyAdapter() { 
 		    public void keyPressed(KeyEvent e) {
-//		    	int posXbarrita1 = barrita1.getX();
-//		    	int posYbarrita1 = barrita1.getY();
-//		    	int alturaBarrita1 = barrita1.getHeight();
-		    	
-//		    	int posYbarrita2 = barrita2.getY();
-//		    	int posXbarrita2 = barrita2.getX();
-//		    	int alturaBarrita2 = barrita1.getHeight();
 		    	
 		    	int alturaPanel = contentPane.getHeight();
-		    	int anchuraPanel = contentPane.getWidth();
 		    	System.out.println(alturaPanel);
 
 		    	if(e.getKeyCode() == KeyEvent.VK_W) {
 		    		player1.moverArriba();
-//		    		if(posYbarrita1 > 0) {
-//		    			barrita1.setLocation(posXbarrita1, posYbarrita1 - 10);
-//		    		}
 		    	}
 		    	else if(e.getKeyCode() == KeyEvent.VK_S){
 		    		player1.moverAbajo(alturaPanel);
-//		    		if(alturaPanel > (alturaBarrita1 + posYbarrita1)) {
-//		    			barrita1.setLocation(posXbarrita1, posYbarrita1 + 10);
-//		    		}
 		    	}
 		    	
 		    	if(e.getKeyCode() == KeyEvent.VK_UP) {
@@ -88,13 +63,8 @@ public class Pong extends JFrame {
 		contentPane.add(pelota);
 		Timer timer = new Timer(10, new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				int cont_dx = 2;
-				int cont_dy = 2;
-				int alto = contentPane.getHeight();
-				int ancho = contentPane.getWidth();
 				pelota.mover(); 					// el valor inicial de la velocidad de la pelota es el valor dentro de "mover()" osea es 2 pixeles en "x" y 2 pixeles en "y".
 				pelota.rebotar(player1, player2);	// lo mismo que el anterior
-//				pelota.repaint();
 			}
 		});
 	timer.start();
