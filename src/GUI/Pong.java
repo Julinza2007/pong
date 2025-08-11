@@ -28,7 +28,7 @@ public class Pong extends JFrame {
 		setFocusable(true);
 		requestFocusInWindow();
 		
-		ImageIcon cancha = new ImageIcon(getClass().getResource("/GUI/canchaBuen.png"));
+		ImageIcon cancha = new ImageIcon(getClass().getResource("/GUI/cancha2.png"));
 		
 		Player player1 = new Player(21, 120, 10, 60);
 		Player player2 = new Player(571, 120, 10, 60);
@@ -52,11 +52,6 @@ public class Pong extends JFrame {
 		    public void keyPressed(KeyEvent e) {		
 		
 		    	int alturaPanel = contentPane.getHeight();
-		    	int anchoPanel = contentPane.getWidth();
-
-		    	System.out.println(alturaPanel);
-		    	System.out.println(anchoPanel);
-		    	
 
 		    	if(e.getKeyCode() == KeyEvent.VK_W) {
 		    		player1.moverArriba();
