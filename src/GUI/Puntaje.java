@@ -1,7 +1,6 @@
 package GUI;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics;
 
 public class Puntaje {
@@ -23,9 +22,9 @@ public class Puntaje {
 
     public void draw(Graphics g) {
         g.setColor(Color.WHITE);
-        g.setFont(new Font("Consolas", Font.BOLD, 36));
-        g.drawString(String.valueOf(puntaje1), 100, 50); // puntaje jugador 1
-        g.drawString(String.valueOf(puntaje2), 500, 50); // puntaje jugador 2
+        g.drawString(String.valueOf(puntaje1), 10, 30); // puntaje jugador 1
+        g.drawString(String.valueOf(puntaje2), 50, 30); // puntaje jugador 2
+
     }
 
     public int getScore1() {
