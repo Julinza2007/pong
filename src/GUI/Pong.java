@@ -16,6 +16,8 @@ public class Pong extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+    private Puntaje puntaje;
+
 
 	public Pong() {
 		contentPane = new JPanel(null);
@@ -26,7 +28,7 @@ public class Pong extends JFrame {
 		setFocusable(true);
 		requestFocusInWindow();
 		
-		ImageIcon cancha = new ImageIcon(getClass().getResource("/GUI/canchaBuen.png"));
+		ImageIcon cancha = new ImageIcon(getClass().getResource("/GUI/cancha2.png"));
 		
 		Player player1 = new Player(21, 120, 10, 60);
 		Player player2 = new Player(571, 120, 10, 60);
@@ -34,7 +36,8 @@ public class Pong extends JFrame {
 		player1.setBackground(Color.BLACK);
 		player2.setBackground(Color.BLACK);
 		
-		Ball pelota = new Ball(290, 145, 15, 15);
+		puntaje = new Puntaje();
+		Ball pelota = new Ball(300, 150, 20, 20, puntaje);
 		pelota.setBackground(Color.RED);
 		contentPane.add(pelota);
 		
@@ -49,11 +52,6 @@ public class Pong extends JFrame {
 		    public void keyPressed(KeyEvent e) {		
 		
 		    	int alturaPanel = contentPane.getHeight();
-		    	int anchoPanel = contentPane.getWidth();
-
-		    	System.out.println(alturaPanel);
-		    	System.out.println(anchoPanel);
-		    	
 
 		    	if(e.getKeyCode() == KeyEvent.VK_W) {
 		    		player1.moverArriba();
