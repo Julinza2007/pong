@@ -1,1 +1,16 @@
-/bin/
+# ❌ Nunca incluir la configuración global del workspace de Eclipse
+.metadata/
+
+# 🛠️ Archivos generados por la compilación de Eclipse
+bin/
+*.class
+
+# 🗒️ Archivos temporales y de log
+*.log
+*.tmp
+*.swp
+*~
+
+# 🖥️ Archivos del sistema (Mac y Windows)
+.DS_Store
+Thumbs.db
