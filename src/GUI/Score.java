@@ -3,11 +3,11 @@ package GUI;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Puntaje {
+public class Score {
     private int puntaje1;
     private int puntaje2;
 
-    public Puntaje() {
+    public Score() {
         puntaje1 = 0;
         puntaje2 = 0;
     }

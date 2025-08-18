@@ -7,33 +7,31 @@ public class Ball extends JPanel {
 	private static final long serialVersionUID = 1L;
 	double dx = 2; 
 	double dy = 2;
-	private Puntaje puntaje;
+	private Score score;
 
-	public Ball(int posX, int posY, int ancho, int altura, Puntaje puntaje) {
-        this.puntaje = puntaje;
+	public Ball(int posX, int posY, int ancho, int altura, Score score) { // Este es el constructor de la pelota.
+        this.score = score;
         setBounds(posX, posY, ancho, altura);
     }
-	public void mover() {
+	public void mover() { // Método mover para que la pelota se mueva vertcalmente u horizontalmente
 		int posY = getY();
 		int posX = getX();
 		posX += dx;
 		posY += dy;
 		setLocation(posX, posY);
 	}
-	public void rebotar(Player player1, Player player2) {
+	public void rebotar(Player player1, Player player2) { // Método rebotar para que la pelota se mueva verticalmente u horizontalmente.
 		int posY = getY();
 		int posX = getX();
 		
-// Si pasa por el lado izquierdo, es punto del 2
-		if (posX <= 0) {
-            puntaje.addScore(2);
+		if (posX <= 0) { // Si pasa por el lado izquierdo, es punto del 2
+            score.addScore(2);
             resetBall(300, 150, 1); 
             return;
         }
 		
-// Si pasa por el lado derecho, es punto del 1
-        if (posX >= 600 - getWidth()) {
-            puntaje.addScore(1);
+        if (posX >= 600 - getWidth()) { // Si pasa por el lado derecho, es punto del 1
+            score.addScore(1);
             resetBall(300, 150, -1); 
             return;
         }
