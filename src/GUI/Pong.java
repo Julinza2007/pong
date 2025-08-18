@@ -25,8 +25,8 @@ public class Pong extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
 		setBounds(400, 400, 616, 349);
-		setFocusable(true);
-		requestFocusInWindow();
+		setFocusable(true); // Es importante agregar esto para hacer focus en la ventana del juego
+		requestFocusInWindow(); // El teclado hace focus solamente en la ventana del juego.
 		
 		ImageIcon cancha = new ImageIcon(getClass().getResource("/GUI/cancha.png")); // Se importa la imagen del fondo.
 		
