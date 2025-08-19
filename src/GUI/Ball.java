@@ -59,7 +59,6 @@ public class Ball extends JPanel {
 			posY + getHeight() >= player1.getY()) {					// se compara la posición Y de la pelota, mas su altura, con la posición Y de la paleta 1 
 			
 			dx = -dx;												//se invierte la dirección de la pelota
-			dy = -dy;
 			dy *= 1.05;
 			dx *= 1.05;
 		}
@@ -68,8 +67,8 @@ public class Ball extends JPanel {
 			posX + getWidth() >= player2.getX() && 					// se compara la posición X de la pelota, mas su ancho, con la posición X de la paleta 2
 			posY <= player2.getY() + player2.getHeight() &&			// se compara la posición Y de la pelota con la posición Y del jugador 2 mas la altura que tiene la paleta
 			posY + getHeight() >= player2.getY()) {					// se compara la posición Y de la pelota, mas su altura, con la posición Y de la paleta 2
-				dx = -dx;											//se invierte la dirección de la pelota
-				dy = -dy;
+				dx = -dx; 											//se invierte la dirección de la pelota
+//				dy = -dy; 
 				dy *= 1.05;
 				dx *= 1.05;
 			}
